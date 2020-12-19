@@ -16,20 +16,11 @@ import java.util.logging.Level;
  */
 public class ConectaBanco {
     
-    private static final String URL = "jdbc:mysql://myadmin.sabortrivial.com.br:3306/strivial_cardapio";
-    
-    // Banco Testes
-   // private static final String URL = "jdbc:mysql://ec2-18-231-62-90.sa-east-1.compute.amazonaws.com:3306/strivial_cardapio";
-    
-    private static final String DRIVER = "org.gjt.mm.mysql.Driver";
-    private static final String USER = "strivial_st";
-    private static final String SENHA = "132St413";
-    
     private static Connection  con = null;
 
     public static Connection cb() throws ClassNotFoundException, SQLException {
-        Class.forName(DRIVER);
-        con = DriverManager.getConnection(URL,USER,SENHA);
+        Class.forName(Dados.DRIVER);
+        con = DriverManager.getConnection(Dados.URL,Dados.USER,Dados.SENHA);
         return con;        
     }
     
